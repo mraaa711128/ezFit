@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E465A53C1A2103D900D7060A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53B1A2103D900D7060A /* main.m */; };
+		E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53E1A2103D900D7060A /* AppDelegate.m */; };
+		E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */; };
+		E465A5451A2103D900D7060A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5441A2103D900D7060A /* ViewController.m */; };
+		E465A5481A2103D900D7060A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E465A5461A2103D900D7060A /* Main.storyboard */; };
+		E465A54A1A2103D900D7060A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E465A5491A2103D900D7060A /* Images.xcassets */; };
+		E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465A54B1A2103D900D7060A /* LaunchScreen.xib */; };
+		E465A5591A2103D900D7060A /* ezFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5581A2103D900D7060A /* ezFitTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E465A5531A2103D900D7060A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E465A52E1A2103D900D7060A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E465A5351A2103D900D7060A;
+			remoteInfo = ezFit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E465A5361A2103D900D7060A /* ezFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E465A53A1A2103D900D7060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E465A53B1A2103D900D7060A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E465A53D1A2103D900D7060A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E465A53E1A2103D900D7060A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E465A5411A2103D900D7060A /* ezFit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ezFit.xcdatamodel; sourceTree = "<group>"; };
+		E465A5431A2103D900D7060A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E465A5441A2103D900D7060A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E465A5471A2103D900D7060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E465A5491A2103D900D7060A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E465A54C1A2103D900D7060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E465A5521A2103D900D7060A /* ezFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E465A5571A2103D900D7060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E465A5581A2103D900D7060A /* ezFitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ezFitTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E465A5331A2103D900D7060A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E465A54F1A2103D900D7060A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E465A52D1A2103D900D7060A = {
+			isa = PBXGroup;
+			children = (
+				E465A5381A2103D900D7060A /* ezFit */,
+				E465A5551A2103D900D7060A /* ezFitTests */,
+				E465A5371A2103D900D7060A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E465A5371A2103D900D7060A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E465A5361A2103D900D7060A /* ezFit.app */,
+				E465A5521A2103D900D7060A /* ezFitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E465A5381A2103D900D7060A /* ezFit */ = {
+			isa = PBXGroup;
+			children = (
+				E465A53D1A2103D900D7060A /* AppDelegate.h */,
+				E465A53E1A2103D900D7060A /* AppDelegate.m */,
+				E465A5431A2103D900D7060A /* ViewController.h */,
+				E465A5441A2103D900D7060A /* ViewController.m */,
+				E465A5461A2103D900D7060A /* Main.storyboard */,
+				E465A5491A2103D900D7060A /* Images.xcassets */,
+				E465A54B1A2103D900D7060A /* LaunchScreen.xib */,
+				E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */,
+				E465A5391A2103D900D7060A /* Supporting Files */,
+			);
+			path = ezFit;
+			sourceTree = "<group>";
+		};
+		E465A5391A2103D900D7060A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E465A53A1A2103D900D7060A /* Info.plist */,
+				E465A53B1A2103D900D7060A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E465A5551A2103D900D7060A /* ezFitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E465A5581A2103D900D7060A /* ezFitTests.m */,
+				E465A5561A2103D900D7060A /* Supporting Files */,
+			);
+			path = ezFitTests;
+			sourceTree = "<group>";
+		};
+		E465A5561A2103D900D7060A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E465A5571A2103D900D7060A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E465A5351A2103D900D7060A /* ezFit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E465A55C1A2103D900D7060A /* Build configuration list for PBXNativeTarget "ezFit" */;
+			buildPhases = (
+				E465A5321A2103D900D7060A /* Sources */,
+				E465A5331A2103D900D7060A /* Frameworks */,
+				E465A5341A2103D900D7060A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ezFit;
+			productName = ezFit;
+			productReference = E465A5361A2103D900D7060A /* ezFit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E465A5511A2103D900D7060A /* ezFitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E465A55F1A2103D900D7060A /* Build configuration list for PBXNativeTarget "ezFitTests" */;
+			buildPhases = (
+				E465A54E1A2103D900D7060A /* Sources */,
+				E465A54F1A2103D900D7060A /* Frameworks */,
+				E465A5501A2103D900D7060A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E465A5541A2103D900D7060A /* PBXTargetDependency */,
+			);
+			name = ezFitTests;
+			productName = ezFitTests;
+			productReference = E465A5521A2103D900D7060A /* ezFitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E465A52E1A2103D900D7060A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Stanley;
+				TargetAttributes = {
+					E465A5351A2103D900D7060A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					E465A5511A2103D900D7060A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = E465A5351A2103D900D7060A;
+					};
+				};
+			};
+			buildConfigurationList = E465A5311A2103D900D7060A /* Build configuration list for PBXProject "ezFit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E465A52D1A2103D900D7060A;
+			productRefGroup = E465A5371A2103D900D7060A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E465A5351A2103D900D7060A /* ezFit */,
+				E465A5511A2103D900D7060A /* ezFitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E465A5341A2103D900D7060A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E465A5481A2103D900D7060A /* Main.storyboard in Resources */,
+				E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */,
+				E465A54A1A2103D900D7060A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E465A5501A2103D900D7060A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E465A5321A2103D900D7060A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
+				E465A53C1A2103D900D7060A /* main.m in Sources */,
+				E465A5451A2103D900D7060A /* ViewController.m in Sources */,
+				E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E465A54E1A2103D900D7060A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E465A5591A2103D900D7060A /* ezFitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E465A5541A2103D900D7060A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E465A5351A2103D900D7060A /* ezFit */;
+			targetProxy = E465A5531A2103D900D7060A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E465A5461A2103D900D7060A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E465A5471A2103D900D7060A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E465A54B1A2103D900D7060A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E465A54C1A2103D900D7060A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E465A55A1A2103D900D7060A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E465A55B1A2103D900D7060A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E465A55D1A2103D900D7060A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ezFit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E465A55E1A2103D900D7060A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ezFit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E465A5601A2103D900D7060A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ezFitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ezFit.app/ezFit";
+			};
+			name = Debug;
+		};
+		E465A5611A2103D900D7060A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ezFitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ezFit.app/ezFit";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E465A5311A2103D900D7060A /* Build configuration list for PBXProject "ezFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E465A55A1A2103D900D7060A /* Debug */,
+				E465A55B1A2103D900D7060A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E465A55C1A2103D900D7060A /* Build configuration list for PBXNativeTarget "ezFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E465A55D1A2103D900D7060A /* Debug */,
+				E465A55E1A2103D900D7060A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E465A55F1A2103D900D7060A /* Build configuration list for PBXNativeTarget "ezFitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E465A5601A2103D900D7060A /* Debug */,
+				E465A5611A2103D900D7060A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E465A5411A2103D900D7060A /* ezFit.xcdatamodel */,
+			);
+			currentVersion = E465A5411A2103D900D7060A /* ezFit.xcdatamodel */;
+			path = ezFit.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E465A52E1A2103D900D7060A /* Project object */;
+}
