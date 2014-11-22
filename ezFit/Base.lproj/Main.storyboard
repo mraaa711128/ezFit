@@ -33,7 +33,7 @@
                             <outlet property="delegate" destination="0F0-7B-6b2" id="LGk-jJ-6KF"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Profile" id="mOK-qf-nvF"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ProfileTabIcon" id="mOK-qf-nvF"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MD2-Bx-xMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +60,7 @@
                             <outlet property="delegate" destination="MDj-SK-nZ3" id="B0O-FP-gVk"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Plan" id="x4X-ev-y25"/>
+                    <tabBarItem key="tabBarItem" title="Plan" image="PlanTabIcon" id="x4X-ev-y25"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94t-ME-tFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="iNF-fn-tc5" id="Aev-ZR-80F"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Setting" id="uFh-Hr-cBo"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="SettingTabIcon" id="uFh-Hr-cBo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HP-iJ-4ZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +114,7 @@
                             <outlet property="delegate" destination="AKc-Rr-7xC" id="t5F-ml-MGh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Device" id="B7T-0m-NKo"/>
+                    <tabBarItem key="tabBarItem" title="Device" image="DeviceTabIcon" id="B7T-0m-NKo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKp-TP-C4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +141,7 @@
                             <outlet property="delegate" destination="ri7-IY-mNE" id="7fC-ut-naT"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Consultant" id="lkd-w2-rye"/>
+                    <tabBarItem key="tabBarItem" title="Consultant" image="ConsultantTabIcon" id="lkd-w2-rye"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPQ-5Q-mwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,4 +170,11 @@
             <point key="canvasLocation" x="-3336" y="550"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConsultantTabIcon" width="25" height="25"/>
+        <image name="DeviceTabIcon" width="25" height="25"/>
+        <image name="PlanTabIcon" width="25" height="25"/>
+        <image name="ProfileTabIcon" width="25" height="25"/>
+        <image name="SettingTabIcon" width="25" height="25"/>
+    </resources>
 </document>
