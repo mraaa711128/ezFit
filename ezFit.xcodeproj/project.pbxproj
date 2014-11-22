@@ -10,11 +10,11 @@
 		E465A53C1A2103D900D7060A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53B1A2103D900D7060A /* main.m */; };
 		E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53E1A2103D900D7060A /* AppDelegate.m */; };
 		E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */; };
-		E465A5451A2103D900D7060A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5441A2103D900D7060A /* ViewController.m */; };
 		E465A5481A2103D900D7060A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E465A5461A2103D900D7060A /* Main.storyboard */; };
 		E465A54A1A2103D900D7060A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E465A5491A2103D900D7060A /* Images.xcassets */; };
 		E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465A54B1A2103D900D7060A /* LaunchScreen.xib */; };
 		E465A5591A2103D900D7060A /* ezFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5581A2103D900D7060A /* ezFitTests.m */; };
+		E465A5631A2103EE00D7060A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E465A5621A2103EE00D7060A /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +34,14 @@
 		E465A53D1A2103D900D7060A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E465A53E1A2103D900D7060A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E465A5411A2103D900D7060A /* ezFit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ezFit.xcdatamodel; sourceTree = "<group>"; };
-		E465A5431A2103D900D7060A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E465A5441A2103D900D7060A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E465A5471A2103D900D7060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E465A5491A2103D900D7060A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E465A54C1A2103D900D7060A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E465A5521A2103D900D7060A /* ezFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E465A5571A2103D900D7060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E465A5581A2103D900D7060A /* ezFitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ezFitTests.m; sourceTree = "<group>"; };
+		E465A5621A2103EE00D7060A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E465A5641A2103EE00D7060A /* ezFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ezFit.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E465A5631A2103EE00D7060A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +66,7 @@
 		E465A52D1A2103D900D7060A = {
 			isa = PBXGroup;
 			children = (
+				E465A5621A2103EE00D7060A /* HealthKit.framework */,
 				E465A5381A2103D900D7060A /* ezFit */,
 				E465A5551A2103D900D7060A /* ezFitTests */,
 				E465A5371A2103D900D7060A /* Products */,
@@ -83,10 +85,9 @@
 		E465A5381A2103D900D7060A /* ezFit */ = {
 			isa = PBXGroup;
 			children = (
+				E465A5641A2103EE00D7060A /* ezFit.entitlements */,
 				E465A53D1A2103D900D7060A /* AppDelegate.h */,
 				E465A53E1A2103D900D7060A /* AppDelegate.m */,
-				E465A5431A2103D900D7060A /* ViewController.h */,
-				E465A5441A2103D900D7060A /* ViewController.m */,
 				E465A5461A2103D900D7060A /* Main.storyboard */,
 				E465A5491A2103D900D7060A /* Images.xcassets */,
 				E465A54B1A2103D900D7060A /* LaunchScreen.xib */,
@@ -171,6 +172,12 @@
 				TargetAttributes = {
 					E465A5351A2103D900D7060A = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = Z38AUYLT8H;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					E465A5511A2103D900D7060A = {
 						CreatedOnToolsVersion = 6.1;
@@ -224,7 +231,6 @@
 			files = (
 				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
 				E465A53C1A2103D900D7060A /* main.m in Sources */,
-				E465A5451A2103D900D7060A /* ViewController.m in Sources */,
 				E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,9 +353,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ezFit/ezFit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ezFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -357,9 +367,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ezFit/ezFit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ezFit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -416,6 +430,7 @@
 				E465A55E1A2103D900D7060A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E465A55F1A2103D900D7060A /* Build configuration list for PBXNativeTarget "ezFitTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +439,7 @@
 				E465A5611A2103D900D7060A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
