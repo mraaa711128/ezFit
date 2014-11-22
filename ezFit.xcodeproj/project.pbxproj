@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E41A1C3D1A212623004F9242 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41A1C3C1A212623004F9242 /* Login.storyboard */; };
+		E41A1C421A213B74004F9242 /* LoginViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A1C411A213B74004F9242 /* LoginViewCtrl.m */; };
 		E465A53C1A2103D900D7060A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53B1A2103D900D7060A /* main.m */; };
 		E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53E1A2103D900D7060A /* AppDelegate.m */; };
 		E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		E41A1C3C1A212623004F9242 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E41A1C401A213B74004F9242 /* LoginViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewCtrl.h; sourceTree = "<group>"; };
+		E41A1C411A213B74004F9242 /* LoginViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewCtrl.m; sourceTree = "<group>"; };
 		E465A5361A2103D900D7060A /* ezFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E465A53A1A2103D900D7060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E465A53B1A2103D900D7060A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,6 +77,15 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		E41A1C3F1A213B3F004F9242 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E41A1C401A213B74004F9242 /* LoginViewCtrl.h */,
+				E41A1C411A213B74004F9242 /* LoginViewCtrl.m */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
 		E465A52D1A2103D900D7060A = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 		E465A5381A2103D900D7060A /* ezFit */ = {
 			isa = PBXGroup;
 			children = (
+				E41A1C3F1A213B3F004F9242 /* LoginViewController */,
 				E41A1C3E1A212631004F9242 /* Storyboards */,
 				E465A5641A2103EE00D7060A /* ezFit.entitlements */,
 				E465A53D1A2103D900D7060A /* AppDelegate.h */,
@@ -244,6 +257,7 @@
 				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
 				E465A53C1A2103D900D7060A /* main.m in Sources */,
 				E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */,
+				E41A1C421A213B74004F9242 /* LoginViewCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
