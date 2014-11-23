@@ -17,6 +17,8 @@
 		E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465A54B1A2103D900D7060A /* LaunchScreen.xib */; };
 		E465A5591A2103D900D7060A /* ezFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5581A2103D900D7060A /* ezFitTests.m */; };
 		E465A5631A2103EE00D7060A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E465A5621A2103EE00D7060A /* HealthKit.framework */; };
+		E4A8EFE61A218CF20060FF4B /* ProfileCreateViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8EFE51A218CF20060FF4B /* ProfileCreateViewCtrl.m */; };
+		E4A8EFE81A21A6CC0060FF4B /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A8EFE71A21A6CC0060FF4B /* Connect.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		E465A5581A2103D900D7060A /* ezFitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ezFitTests.m; sourceTree = "<group>"; };
 		E465A5621A2103EE00D7060A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E465A5641A2103EE00D7060A /* ezFit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ezFit.entitlements; sourceTree = "<group>"; };
+		E4A8EFE41A218CF20060FF4B /* ProfileCreateViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCreateViewCtrl.h; sourceTree = "<group>"; };
+		E4A8EFE51A218CF20060FF4B /* ProfileCreateViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCreateViewCtrl.m; sourceTree = "<group>"; };
+		E4A8EFE71A21A6CC0060FF4B /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			children = (
 				E465A5461A2103D900D7060A /* Main.storyboard */,
 				E41A1C3C1A212623004F9242 /* Login.storyboard */,
+				E4A8EFE71A21A6CC0060FF4B /* Connect.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -82,6 +88,8 @@
 			children = (
 				E41A1C401A213B74004F9242 /* LoginViewCtrl.h */,
 				E41A1C411A213B74004F9242 /* LoginViewCtrl.m */,
+				E4A8EFE41A218CF20060FF4B /* ProfileCreateViewCtrl.h */,
+				E4A8EFE51A218CF20060FF4B /* ProfileCreateViewCtrl.m */,
 			);
 			name = LoginViewController;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E41A1C3D1A212623004F9242 /* Login.storyboard in Resources */,
+				E4A8EFE81A21A6CC0060FF4B /* Connect.storyboard in Resources */,
 				E465A5481A2103D900D7060A /* Main.storyboard in Resources */,
 				E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */,
 				E465A54A1A2103D900D7060A /* Images.xcassets in Resources */,
@@ -257,6 +266,7 @@
 				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
 				E465A53C1A2103D900D7060A /* main.m in Sources */,
 				E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */,
+				E4A8EFE61A218CF20060FF4B /* ProfileCreateViewCtrl.m in Sources */,
 				E41A1C421A213B74004F9242 /* LoginViewCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

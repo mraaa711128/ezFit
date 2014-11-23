@@ -16,10 +16,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtRePassword;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actLoading;
 
 - (IBAction)btnLoginClick:(id)sender;
 - (IBAction)btnRegisterClick:(id)sender;
 - (IBAction)btnNextStepClick:(id)sender;
 - (IBAction)btnCancelClick:(id)sender;
+- (IBAction)txtRePasswordEditingChanged:(id)sender;
 
 @end
