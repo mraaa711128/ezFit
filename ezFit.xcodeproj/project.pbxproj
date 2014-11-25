@@ -16,9 +16,15 @@
 		E465A54A1A2103D900D7060A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E465A5491A2103D900D7060A /* Images.xcassets */; };
 		E465A54D1A2103D900D7060A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E465A54B1A2103D900D7060A /* LaunchScreen.xib */; };
 		E465A5591A2103D900D7060A /* ezFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A5581A2103D900D7060A /* ezFitTests.m */; };
-		E465A5631A2103EE00D7060A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E465A5621A2103EE00D7060A /* HealthKit.framework */; };
 		E4A8EFE61A218CF20060FF4B /* ProfileCreateViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8EFE51A218CF20060FF4B /* ProfileCreateViewCtrl.m */; };
 		E4A8EFE81A21A6CC0060FF4B /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A8EFE71A21A6CC0060FF4B /* Connect.storyboard */; };
+		E4A8EFEC1A21D6F60060FF4B /* WifiConnectViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8EFEB1A21D6F60060FF4B /* WifiConnectViewCtrl.m */; };
+		E4A8EFEF1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8EFEE1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m */; };
+		E4A8F06F1A21E8C20060FF4B /* ezFitService.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F06E1A21E8C20060FF4B /* ezFitService.m */; };
+		E4A8F0771A229AF70060FF4B /* WifiSelectTabCellCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F0761A229AF70060FF4B /* WifiSelectTabCellCtrl.m */; };
+		E4A8F0841A22B4E30060FF4B /* WifiPasswdTabViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A8F0831A22B4E30060FF4B /* WifiPasswdTabViewCtrl.m */; };
+		E4AA8B2E1A242DD300DF7247 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AA8B2B1A242DC800DF7247 /* libAFNetworking.a */; };
+		E4AA8B591A24CEFC00DF7247 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E465A5621A2103EE00D7060A /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +34,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E465A5351A2103D900D7060A;
 			remoteInfo = ezFit;
+		};
+		E4AA8B2A1A242DC800DF7247 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4AA8B251A242DC800DF7247 /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4AA8AC81A242C3B00DF7247;
+			remoteInfo = AFNetworking;
+		};
+		E4AA8B2C1A242DC800DF7247 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4AA8B251A242DC800DF7247 /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4AA8AD31A242C3C00DF7247;
+			remoteInfo = AFNetworkingTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,6 +72,17 @@
 		E4A8EFE41A218CF20060FF4B /* ProfileCreateViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCreateViewCtrl.h; sourceTree = "<group>"; };
 		E4A8EFE51A218CF20060FF4B /* ProfileCreateViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCreateViewCtrl.m; sourceTree = "<group>"; };
 		E4A8EFE71A21A6CC0060FF4B /* Connect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
+		E4A8EFEA1A21D6F60060FF4B /* WifiConnectViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiConnectViewCtrl.h; sourceTree = "<group>"; };
+		E4A8EFEB1A21D6F60060FF4B /* WifiConnectViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiConnectViewCtrl.m; sourceTree = "<group>"; };
+		E4A8EFED1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiSelectTabViewCtrl.h; sourceTree = "<group>"; };
+		E4A8EFEE1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiSelectTabViewCtrl.m; sourceTree = "<group>"; };
+		E4A8F06D1A21E8C20060FF4B /* ezFitService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ezFitService.h; sourceTree = "<group>"; };
+		E4A8F06E1A21E8C20060FF4B /* ezFitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ezFitService.m; sourceTree = "<group>"; };
+		E4A8F0751A229AF70060FF4B /* WifiSelectTabCellCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiSelectTabCellCtrl.h; sourceTree = "<group>"; };
+		E4A8F0761A229AF70060FF4B /* WifiSelectTabCellCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiSelectTabCellCtrl.m; sourceTree = "<group>"; };
+		E4A8F0821A22B4E30060FF4B /* WifiPasswdTabViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiPasswdTabViewCtrl.h; sourceTree = "<group>"; };
+		E4A8F0831A22B4E30060FF4B /* WifiPasswdTabViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiPasswdTabViewCtrl.m; sourceTree = "<group>"; };
+		E4AA8B251A242DC800DF7247 /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = ../AFNetworking/AFNetworking.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E465A5631A2103EE00D7060A /* HealthKit.framework in Frameworks */,
+				E4AA8B2E1A242DD300DF7247 /* libAFNetworking.a in Frameworks */,
+				E4AA8B591A24CEFC00DF7247 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +129,7 @@
 		E465A52D1A2103D900D7060A = {
 			isa = PBXGroup;
 			children = (
-				E465A5621A2103EE00D7060A /* HealthKit.framework */,
+				E4AA8B241A242D9800DF7247 /* Framework */,
 				E465A5381A2103D900D7060A /* ezFit */,
 				E465A5551A2103D900D7060A /* ezFitTests */,
 				E465A5371A2103D900D7060A /* Products */,
@@ -116,6 +148,8 @@
 		E465A5381A2103D900D7060A /* ezFit */ = {
 			isa = PBXGroup;
 			children = (
+				E4A8F06A1A21E8320060FF4B /* ezFitService */,
+				E4A8EFE91A21D67F0060FF4B /* ConnectViewController */,
 				E41A1C3F1A213B3F004F9242 /* LoginViewController */,
 				E41A1C3E1A212631004F9242 /* Storyboards */,
 				E465A5641A2103EE00D7060A /* ezFit.entitlements */,
@@ -155,6 +189,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E4A8EFE91A21D67F0060FF4B /* ConnectViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4A8EFEA1A21D6F60060FF4B /* WifiConnectViewCtrl.h */,
+				E4A8EFEB1A21D6F60060FF4B /* WifiConnectViewCtrl.m */,
+				E4A8EFED1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.h */,
+				E4A8EFEE1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m */,
+				E4A8F0751A229AF70060FF4B /* WifiSelectTabCellCtrl.h */,
+				E4A8F0761A229AF70060FF4B /* WifiSelectTabCellCtrl.m */,
+				E4A8F0821A22B4E30060FF4B /* WifiPasswdTabViewCtrl.h */,
+				E4A8F0831A22B4E30060FF4B /* WifiPasswdTabViewCtrl.m */,
+			);
+			name = ConnectViewController;
+			sourceTree = "<group>";
+		};
+		E4A8F06A1A21E8320060FF4B /* ezFitService */ = {
+			isa = PBXGroup;
+			children = (
+				E4A8F06D1A21E8C20060FF4B /* ezFitService.h */,
+				E4A8F06E1A21E8C20060FF4B /* ezFitService.m */,
+			);
+			name = ezFitService;
+			sourceTree = "<group>";
+		};
+		E4AA8B241A242D9800DF7247 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E4AA8B251A242DC800DF7247 /* AFNetworking.xcodeproj */,
+				E465A5621A2103EE00D7060A /* HealthKit.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		E4AA8B261A242DC800DF7247 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4AA8B2B1A242DC800DF7247 /* libAFNetworking.a */,
+				E4AA8B2D1A242DC800DF7247 /* AFNetworkingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +241,7 @@
 				E465A5321A2103D900D7060A /* Sources */,
 				E465A5331A2103D900D7060A /* Frameworks */,
 				E465A5341A2103D900D7060A /* Resources */,
+				E464056F1A24F8AC00E0D1AE /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -228,6 +305,12 @@
 			mainGroup = E465A52D1A2103D900D7060A;
 			productRefGroup = E465A5371A2103D900D7060A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E4AA8B261A242DC800DF7247 /* Products */;
+					ProjectRef = E4AA8B251A242DC800DF7247 /* AFNetworking.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E465A5351A2103D900D7060A /* ezFit */,
@@ -235,6 +318,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E4AA8B2B1A242DC800DF7247 /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = E4AA8B2A1A242DC800DF7247 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4AA8B2D1A242DC800DF7247 /* AFNetworkingTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AFNetworkingTests.xctest;
+			remoteRef = E4AA8B2C1A242DC800DF7247 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E465A5341A2103D900D7060A /* Resources */ = {
@@ -258,16 +358,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E464056F1A24F8AC00E0D1AE /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Every syntax should be exactly the same\nconf=${CONFIGURATION}\nbuildPlist=${PROJECT_DIR}/${INFOPLIST_FILE}\n# Only increase the build number on Device and AdHoc/AppStore(Release) build\nbundleVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbundleVersion=$(printf \"%d\" \"0x$bundleVersion\")\nbundleVersion=$(($bundleVersion+1))\nbundleVersion=$(printf \"%04x\" \"$bundleVersion\")\nbundleVersion=$(echo $bundleVersion | tr \"a-f\" \"A-F\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\nif [ ${CONFIGURATION} = \"Release\" ]; then\nversion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nmainVersion=$(echo \"$version\" | awk -F '.' '{print $1}')\nminorVersion=$(echo \"$version\" | awk -F '.' '{print $2}')\nminorVersion=$(($minorVersion+1))\nversion=$(printf \"%d.%d\" \"$mainVersion\" \"$minorVersion\")\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $version\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E465A5321A2103D900D7060A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A8EFEF1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m in Sources */,
+				E4A8F0771A229AF70060FF4B /* WifiSelectTabCellCtrl.m in Sources */,
 				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
 				E465A53C1A2103D900D7060A /* main.m in Sources */,
+				E4A8F0841A22B4E30060FF4B /* WifiPasswdTabViewCtrl.m in Sources */,
 				E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */,
+				E4A8F06F1A21E8C20060FF4B /* ezFitService.m in Sources */,
 				E4A8EFE61A218CF20060FF4B /* ProfileCreateViewCtrl.m in Sources */,
 				E41A1C421A213B74004F9242 /* LoginViewCtrl.m in Sources */,
+				E4A8EFEC1A21D6F60060FF4B /* WifiConnectViewCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +514,14 @@
 				CODE_SIGN_ENTITLEMENTS = ezFit/ezFit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = ezFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "../../Framework/AFNetworking/UIKit+AFNetworking ../../Framework/AFNetworking/AFNetworking";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -406,10 +532,14 @@
 				CODE_SIGN_ENTITLEMENTS = ezFit/ezFit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = ezFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "../../Framework/AFNetworking/UIKit+AFNetworking ../../Framework/AFNetworking/AFNetworking";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

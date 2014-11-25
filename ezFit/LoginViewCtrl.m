@@ -5,6 +5,7 @@
 //  Created by Stanley on 11/22/14.
 //  Copyright (c) 2014 Stanley. All rights reserved.
 //
+#import <SystemConfiguration/CaptiveNetwork.h>
 
 #import "LoginViewCtrl.h"
 
@@ -97,4 +98,6 @@
     [self.btnLogin setHidden:isReg];
     [self.btnRegister setHidden:isReg];
 }
+
+
 @end
