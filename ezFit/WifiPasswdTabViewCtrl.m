@@ -16,6 +16,8 @@
 @implementation WifiPasswdTabViewCtrl {
     BOOL setupSuccess;
     NSDictionary* wifiInfoObj;
+    NSArray* pickerOptions;
+    UITextField* currentEditing;
 }
 
 @synthesize txtSSID;
@@ -35,7 +37,10 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     setupSuccess = NO;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;    
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (wifiInfoObj == nil) {
+        wifiInfoObj = @{@"ssid":@"",@"security":@"None",@"encrypt":@"None",@"other":@"None/None"};
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,6 +122,62 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark TextField Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == txtSSID) {
+        [txtSecurityType becomeFirstResponder];
+    } else if (textField == txtPassword) {
+        [txtPassword resignFirstResponder];
+    }
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    currentEditing = textField;
+    BOOL showPickerView = NO;
+    if (textField == txtSecurityType) {
+        pickerOptions = @[@{@"option":@"None"},@{@"option":@"WPA"},@{@"option":@"WPA2"},@{@"option":@"WPA/WPA2"}];
+        showPickerView = YES;
+    } else if (textField == txtEncrypt) {
+        pickerOptions = @[@{@"option":@"None"},@{@"option":@"TKIP"},@{@"option":@"AES"},@{@"option":@"TKIP/AES"}];
+        showPickerView = YES;
+    } else if (textField == txtOtherInfo) {
+        pickerOptions = @[@{@"option":@"None/None"},@{@"option":@"WPS Enable/None"},@{@"option":@"None/Shared Enable"},@{@"option":@"WPS Enable/Shared Enable"}];
+        showPickerView = YES;
+    }
+    if (showPickerView == YES) {
+        UIPickerView* pickerView = [[UIPickerView alloc] init];
+        [pickerView setDataSource:self];
+        [pickerView setDelegate:self];
+        UIToolbar* pickerTool = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 44.0)];
+        UIBarButtonItem* barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(pickerButtonDoneClick)];
+        UIBarButtonItem* flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [pickerTool setItems:@[flexibleSpace,barButtonDone]];
+        [textField setInputView:pickerView];
+        [textField setInputAccessoryView:pickerTool];
+    }
+}
+
+#pragma mark PickerView DataSource & Delegate
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return pickerOptions.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[pickerOptions objectAtIndex:row] objectForKey:@"option"];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [currentEditing setText:[[pickerOptions objectAtIndex:row] objectForKey:@"option"]];
+}
+
+- (void)pickerButtonDoneClick {
+    [currentEditing resignFirstResponder];
+}
 
 - (IBAction)txtPasswdEditingChange:(id)sender {
     if ([txtPassword.text isEqualToString:@""] == NO) {

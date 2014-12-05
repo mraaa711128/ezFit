@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WifiPasswdTabViewCtrl : UITableViewController
+@interface WifiPasswdTabViewCtrl : UITableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *txtSSID;
 @property (weak, nonatomic) IBOutlet UITextField *txtSecurityType;

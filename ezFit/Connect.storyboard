@@ -273,7 +273,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnScanClick:" destination="8dR-j1-IkO" eventType="touchUpInside" id="cic-Ww-VbG"/>
-                                    <segue destination="lkh-cm-SVU" kind="show" identifier="segueWifiScan" id="kvC-De-bii"/>
+                                    <segue destination="VC3-uK-r3n" kind="show" identifier="segueWifiScan" id="N3M-Xc-o7l"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N4n-iv-9aP">
@@ -423,7 +423,7 @@
         <scene sceneID="HTe-Mq-UgG">
             <objects>
                 <tableViewController title="Password Enter" id="VC3-uK-r3n" customClass="WifiPasswdTabViewCtrl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="25" sectionFooterHeight="5" id="jga-Jb-UwX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="25" sectionFooterHeight="5" id="jga-Jb-UwX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -445,10 +445,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wifi SSID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TQS-6w-O9t">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Wifi SSID" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TQS-6w-O9t">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="VC3-uK-r3n" id="6ff-JX-wWp"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -482,10 +485,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Security Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-vq-P8U">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Security Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-vq-P8U">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="VC3-uK-r3n" id="v5L-aA-v4k"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -557,7 +563,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Encryption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nx-Nn-lyY">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Encryption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nx-Nn-lyY">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="XPF-wl-YhB"/>
@@ -569,6 +575,9 @@
                                                             <exclude reference="XPF-wl-YhB"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="VC3-uK-r3n" id="VJw-h6-JJI"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -603,10 +612,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other Info" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-gq-xI6">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="/" placeholder="Other Info" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-gq-xI6">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="VC3-uK-r3n" id="ogo-fz-bmJ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -644,9 +656,10 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-n5-qOM">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                     <connections>
                                                         <action selector="txtPasswdEditingChange:" destination="VC3-uK-r3n" eventType="editingChanged" id="qKS-QB-xrg"/>
+                                                        <outlet property="delegate" destination="VC3-uK-r3n" id="4zn-so-1wa"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -892,4 +905,7 @@
             <point key="canvasLocation" x="3577" y="412.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="N3M-Xc-o7l"/>
+    </inferredMetricsTieBreakers>
 </document>

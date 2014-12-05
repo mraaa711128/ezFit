@@ -154,9 +154,55 @@ static AFHTTPSessionManager* manager;
     return result;
 }
 
+- (NSString*)getWifiTypeWithWps:(NSString*)wps AndShared:(NSString*)shared AndSecurity:(NSString*)security AndEncrypt:(NSString*)encrypt {
+    if ([wps isEqualToString:@"WPS Enable"]) {
+        wps = @"1";
+    } else {
+        wps = @"0";
+    }
+    if ([shared isEqualToString:@"Shared Enable"]) {
+        shared = @"8";
+    } else {
+        shared = @"0";
+    }
+    if ([security isEqualToString:@"None"]) {
+        security = @"0";
+    } else if ([security isEqualToString:@"WPA"]) {
+        security = @"2";
+    } else if ([security isEqualToString:@"WPA2"]) {
+        security = @"4";
+    } else if ([security isEqualToString:@"WPA/WPA2"]) {
+        security = @"6";
+    } else {
+        security = @"0";
+    }
+    if ([encrypt isEqualToString:@"None"]) {
+        encrypt = @"0";
+    } else if ([encrypt isEqualToString:@"TKIP"]) {
+        encrypt = @"2";
+    } else if ([encrypt isEqualToString:@"AES"]) {
+        encrypt = @"4";
+    } else if ([encrypt isEqualToString:@"TKIP/AES"]) {
+        encrypt = @"6";
+    } else {
+        encrypt = @"0";
+    }
+    unsigned int wifitype = 0;
+    NSScanner* scanner = [NSScanner scannerWithString:[NSString stringWithFormat:@"0x%@0%@0%@00%@",wps,security,shared,encrypt]];
+    [scanner scanHexInt:&wifitype];
+    return [NSString stringWithFormat:@"%u",wifitype];
+}
+
 - (void)setWifiPasswordWithWifiInfo:(NSDictionary*)wifiInfo AndPassword:(NSString*)password Success:(successBlockType)success Fail:(failBlockType)fail {
     NSString* SSID = [wifiInfo objectForKey:@"ssid"];
     NSString* TYPE = [wifiInfo objectForKey:@"wifitype"];
+    if (TYPE == nil) {
+        NSString* other = [wifiInfo objectForKey:@"other"];
+        NSArray* arrOther = [other componentsSeparatedByString:@"/"];
+        NSString* wps = [arrOther objectAtIndex:0];
+        NSString* shared = [arrOther objectAtIndex:1];
+        TYPE = [self getWifiTypeWithWps:wps AndShared:shared AndSecurity:[wifiInfo objectForKey:@"security"] AndEncrypt:[wifiInfo objectForKey:@"encrypt"]];
+    }
     NSMutableDictionary* paras = [[NSMutableDictionary alloc] init];
     [paras setObject:SSID forKey:@"as0"];
     [paras setObject:TYPE forKey:@"at0"];
