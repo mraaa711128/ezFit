@@ -42,7 +42,7 @@
             break;
         case 1: //Go Settings Button
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-#if TARGET_IPHONE_SIMULATOR
+#if DEBUG
             TestConnect = @"Test";
 #endif
             break;
