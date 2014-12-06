@@ -15,7 +15,7 @@
 
 @implementation WifiPasswdTabViewCtrl {
     BOOL setupSuccess;
-    NSDictionary* wifiInfoObj;
+    NSMutableDictionary* wifiInfoObj;
     NSArray* pickerOptions;
     UITextField* currentEditing;
 }
@@ -39,7 +39,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     if (wifiInfoObj == nil) {
-        wifiInfoObj = @{@"ssid":@"",@"security":@"None",@"encrypt":@"None",@"other":@"None/None"};
+        wifiInfoObj = [NSMutableDictionary dictionaryWithDictionary:@{@"ssid":@"",@"security":@"None",@"encrypt":@"None",@"other":@"None/None"}];
     }
 }
 
@@ -151,8 +151,9 @@
         [pickerView setDelegate:self];
         UIToolbar* pickerTool = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, 44.0)];
         UIBarButtonItem* barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(pickerButtonDoneClick)];
+        UIBarButtonItem* barButtonNext = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(pickerButtonNextClick)];
         UIBarButtonItem* flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        [pickerTool setItems:@[flexibleSpace,barButtonDone]];
+        [pickerTool setItems:@[barButtonNext,flexibleSpace,barButtonDone]];
         [textField setInputView:pickerView];
         [textField setInputAccessoryView:pickerTool];
     }
@@ -179,6 +180,22 @@
     [currentEditing resignFirstResponder];
 }
 
+- (void)pickerButtonNextClick {
+    switch (currentEditing.tag) {
+        case 1:
+            [txtEncrypt becomeFirstResponder];
+            break;
+        case 2:
+            [txtOtherInfo becomeFirstResponder];
+            break;
+        case 3:
+            [txtPassword becomeFirstResponder];
+            break;
+        default:
+            break;
+    }
+}
+
 - (IBAction)txtPasswdEditingChange:(id)sender {
     if ([txtPassword.text isEqualToString:@""] == NO) {
         [btnConfirm setEnabled:YES];
@@ -188,6 +205,11 @@
 }
 
 - (IBAction)btnConfirmClick:(id)sender {
+    [wifiInfoObj setObject:txtSSID.text forKey:@"ssid"];
+    [wifiInfoObj setObject:txtSecurityType.text forKey:@"security"];
+    [wifiInfoObj setObject:txtEncrypt.text forKey:@"encrypt"];
+    [wifiInfoObj setObject:txtOtherInfo.text forKey:@"other"];
+    
     ezFitService* service = [ezFitService sharedService];
     [service setWifiPasswordWithWifiInfo:wifiInfoObj AndPassword:txtPassword.text Success:^(NSDictionary* result){
         setupSuccess = YES;
@@ -201,7 +223,7 @@
 }
 
 - (void)setWifiInfo:(NSDictionary *)wifiInfo {
-    wifiInfoObj = wifiInfo;
+    wifiInfoObj = [NSMutableDictionary dictionaryWithDictionary:wifiInfo];
 }
 
 - (void)showWifiInfo:(NSDictionary*)wifiInfo {

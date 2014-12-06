@@ -485,7 +485,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Security Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-vq-P8U">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Security Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-vq-P8U">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -563,7 +563,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Encryption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nx-Nn-lyY">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="None" placeholder="Encryption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nx-Nn-lyY">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="XPF-wl-YhB"/>
@@ -612,7 +612,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="/" placeholder="Other Info" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-gq-xI6">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="/" placeholder="Other Info" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfl-gq-xI6">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -653,7 +653,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-n5-qOM">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-n5-qOM">
                                                     <rect key="frame" x="163" y="10" width="429" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
