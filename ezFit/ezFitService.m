@@ -44,7 +44,7 @@ static AFHTTPSessionManager* manager;
     if (self) {
         serviceInfo = [[NSMutableDictionary alloc] init];
         
-        manager = [AFHTTPSessionManager manager];
+        manager = [ezFitService getHttpSessionManager];
     }
     return self;
 }
@@ -53,6 +53,7 @@ static AFHTTPSessionManager* manager;
     if (manager == nil) {
         manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:[ezFitServiceUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     }
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     return manager;
 }
@@ -228,7 +229,8 @@ static AFHTTPSessionManager* manager;
 }
 
 - (void)loginWithUserId:(NSString *)userid Password:(NSString *)password Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
-    
+    NSDictionary* loginInfo = [NSDictionary dictionaryWithObjects:@[userid,password] forKeys:@[@"user_id",@"password"]];
+    [self requestServiceWithController:@"Users" AndFunction:@"AppLogin" AndParameters:loginInfo Success:successBlock Fail:failBlock];
 }
 
 - (void)registerWithUserInfo:(NSDictionary *)userInfo Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
@@ -237,6 +239,29 @@ static AFHTTPSessionManager* manager;
 
 - (void)getUserRecordsWithUserId:(NSString *)userid LoginToken:(NSString *)token Date:(NSString *)date Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
     
+}
+
+- (void)requestServiceWithController:(NSString*)controller AndFunction:(NSString*)function AndParameters:(NSDictionary*)parameters Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+    AFHTTPSessionManager* mgr = [ezFitService getHttpSessionManager];
+    [mgr POST:[NSString stringWithFormat:@"%@/%@",controller,function] parameters:parameters success:^(NSURLSessionDataTask* task, id responseObject){
+        NSDictionary* response = responseObject;
+        NSDictionary* result;
+        if ([result.allKeys containsObject:@"error"]) {
+            result = [response objectForKey:@"error"];
+            if (failBlock) {
+                failBlock([NSError errorWithDomain:[result objectForKey:@"message"] code:(NSInteger)[result objectForKey:@"code"] userInfo:nil]);
+            }
+        } else {
+            result = [response objectForKey:@"result"];
+            if (successBlock) {
+                successBlock(result);
+            }
+        }
+    } failure:^(NSURLSessionDataTask* task, NSError* error){
+        if (failBlock) {
+            failBlock(error);
+        }
+    }];
 }
 
 - (NSString *)stringFromHexString:(NSString *)hexString {
