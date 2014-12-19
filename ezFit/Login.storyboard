@@ -9,7 +9,7 @@
         <!--Navigation Controller-->
         <scene sceneID="n0x-wa-Kb9">
             <objects>
-                <navigationController id="wo3-I1-8rq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginView" id="wo3-I1-8rq" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8ED-E7-qqc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +25,7 @@
         <!--Login-->
         <scene sceneID="hBr-ct-yFI">
             <objects>
-                <viewController storyboardIdentifier="LoginView" title="Login" id="eJl-6B-jgh" customClass="LoginTabViewCtrl" sceneMemberID="viewController">
+                <viewController title="Login" id="eJl-6B-jgh" customClass="LoginTabViewCtrl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="crb-Q7-sAj"/>
                         <viewControllerLayoutGuide type="bottom" id="9VQ-r1-o7w"/>
@@ -199,7 +199,7 @@
         <!--Profile Create-->
         <scene sceneID="jei-kQ-mp9">
             <objects>
-                <viewController title="Profile Create" id="nvS-oM-HCu" customClass="ProfileCreateViewCtrl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileCreateView" title="Profile Create" id="nvS-oM-HCu" customClass="ProfileCreateViewCtrl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xs2-6q-udu"/>
                         <viewControllerLayoutGuide type="bottom" id="5UZ-eH-DrP"/>
@@ -211,67 +211,67 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xMd-q6-nFN">
                                 <rect key="frame" x="150" y="165" width="300" height="270"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nick Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-vS-mWe">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nick Name" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-vS-mWe">
                                         <rect key="frame" x="0.0" y="8" width="300" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="h5t-lx-cFg"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="wdv-sZ-7Qn"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNq-uE-avK">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sex" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNq-uE-avK">
                                         <rect key="frame" x="0.0" y="60" width="88" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="gvH-Kj-spr"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="LGe-S6-etw"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birth Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-tJ-1cw">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birth Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-tJ-1cw">
                                         <rect key="frame" x="96" y="60" width="204" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="S48-Di-k2N"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="nNa-4f-LA1"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Height (cm)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uwF-DU-577">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Height (cm)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uwF-DU-577">
                                         <rect key="frame" x="0.0" y="112" width="146" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="AAW-WN-1n9"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="ate-Pe-NgB"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Waist (cm)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q1j-mi-9nh">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Waist (cm)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q1j-mi-9nh">
                                         <rect key="frame" x="155" y="112" width="145" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="next"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="jK5-Zi-baD"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="qdk-Wd-iPG"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name (Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TsH-lp-f1X">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name (Optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TsH-lp-f1X">
                                         <rect key="frame" x="0.0" y="164" width="300" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="dl6-fv-ABs"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="uyZ-Yt-AYc"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name (Optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fe5-qJ-lXe">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name (Optional)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fe5-qJ-lXe">
                                         <rect key="frame" x="0.0" y="216" width="300" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <outlet property="delegate" destination="nvS-oM-HCu" id="ncv-En-n63"/>
+                                            <outlet property="delegate" destination="nvS-oM-HCu" id="d3y-P1-Ayu"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -338,6 +338,9 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="buttonRegisterClick:" destination="nvS-oM-HCu" eventType="touchUpInside" id="lLM-6I-9mO"/>
+                                                    </connections>
                                                 </button>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8GY-ae-Kw5">
                                                     <rect key="frame" x="272" y="12" width="20" height="20"/>
@@ -387,6 +390,9 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="buttonCancelClick:" destination="nvS-oM-HCu" eventType="touchUpInside" id="Hlv-bJ-Jfy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -487,11 +493,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="D1a-3X-OOR"/>
-                                <exclude reference="TcP-Yo-2QU"/>
                                 <exclude reference="EUm-vr-Qai"/>
                                 <exclude reference="enq-3E-Meu"/>
                                 <exclude reference="f42-Id-lEh"/>
+                                <exclude reference="D1a-3X-OOR"/>
+                                <exclude reference="TcP-Yo-2QU"/>
                                 <exclude reference="Rrc-px-po3"/>
                                 <exclude reference="Vqj-jA-1wp"/>
                                 <exclude reference="vf6-2P-MYU"/>
@@ -499,16 +505,16 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="D1a-3X-OOR"/>
-                                <include reference="TcP-Yo-2QU"/>
-                                <exclude reference="aU2-HS-WY9"/>
-                                <exclude reference="gxz-1a-hq5"/>
                                 <include reference="EUm-vr-Qai"/>
                                 <exclude reference="FfF-4M-CUR"/>
                                 <include reference="enq-3E-Meu"/>
                                 <include reference="f42-Id-lEh"/>
                                 <exclude reference="lgu-ZM-Zpl"/>
                                 <exclude reference="xQg-KU-UTI"/>
+                                <include reference="D1a-3X-OOR"/>
+                                <include reference="TcP-Yo-2QU"/>
+                                <exclude reference="aU2-HS-WY9"/>
+                                <exclude reference="gxz-1a-hq5"/>
                                 <exclude reference="5Dr-nm-6Wj"/>
                                 <include reference="Rrc-px-po3"/>
                                 <include reference="Vqj-jA-1wp"/>
@@ -518,16 +524,17 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="btnCancel" destination="r1o-pb-4HQ" id="n6a-ut-gFb"/>
-                        <outlet property="btnRegister" destination="Swu-HF-RSX" id="B4a-hx-hgm"/>
-                        <outlet property="imgProfile" destination="srF-WD-4xt" id="HZ4-Ir-7Mn"/>
-                        <outlet property="txtBirthdate" destination="WwD-tJ-1cw" id="y4H-Bx-F6W"/>
-                        <outlet property="txtFirstname" destination="Fe5-qJ-lXe" id="Vp9-Ai-ZEq"/>
-                        <outlet property="txtHeight" destination="uwF-DU-577" id="pF6-YQ-uGb"/>
-                        <outlet property="txtLastname" destination="TsH-lp-f1X" id="uP0-TY-uQG"/>
-                        <outlet property="txtNickname" destination="nyT-vS-mWe" id="7We-y4-ApC"/>
-                        <outlet property="txtSex" destination="ZNq-uE-avK" id="p4T-1i-nnk"/>
-                        <outlet property="txtWaist" destination="q1j-mi-9nh" id="14A-x0-Lpc"/>
+                        <outlet property="actProfileUpdate" destination="8GY-ae-Kw5" id="qEL-SV-CA0"/>
+                        <outlet property="btnCancel" destination="r1o-pb-4HQ" id="Jft-TI-AHp"/>
+                        <outlet property="btnRegister" destination="Swu-HF-RSX" id="oXT-iQ-gu9"/>
+                        <outlet property="imgProfile" destination="srF-WD-4xt" id="PPx-we-uBu"/>
+                        <outlet property="txtBirthdate" destination="WwD-tJ-1cw" id="qFM-jW-x8R"/>
+                        <outlet property="txtFirstname" destination="Fe5-qJ-lXe" id="zPO-T2-1dc"/>
+                        <outlet property="txtHeight" destination="uwF-DU-577" id="dTU-os-NPd"/>
+                        <outlet property="txtLastname" destination="TsH-lp-f1X" id="Bnc-JL-OrK"/>
+                        <outlet property="txtNickname" destination="nyT-vS-mWe" id="YTF-Zf-Bf2"/>
+                        <outlet property="txtSex" destination="ZNq-uE-avK" id="eha-pf-F5e"/>
+                        <outlet property="txtWaist" destination="q1j-mi-9nh" id="tVm-yw-VJH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFq-QU-wQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>

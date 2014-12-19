@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E41A1C3D1A212623004F9242 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41A1C3C1A212623004F9242 /* Login.storyboard */; };
 		E41A1C421A213B74004F9242 /* LoginViewCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E41A1C411A213B74004F9242 /* LoginViewCtrl.m */; };
+		E41AA54A1A4387E300318F7D /* UIAlertController+CustomAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41AA5491A4387E300318F7D /* UIAlertController+CustomAlertController.m */; };
 		E465A53C1A2103D900D7060A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53B1A2103D900D7060A /* main.m */; };
 		E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E465A53E1A2103D900D7060A /* AppDelegate.m */; };
 		E465A5421A2103D900D7060A /* ezFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E465A5401A2103D900D7060A /* ezFit.xcdatamodeld */; };
@@ -58,6 +59,8 @@
 		E41A1C3C1A212623004F9242 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E41A1C401A213B74004F9242 /* LoginViewCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewCtrl.h; sourceTree = "<group>"; };
 		E41A1C411A213B74004F9242 /* LoginViewCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewCtrl.m; sourceTree = "<group>"; };
+		E41AA5481A4387E300318F7D /* UIAlertController+CustomAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CustomAlertController.h"; sourceTree = "<group>"; };
+		E41AA5491A4387E300318F7D /* UIAlertController+CustomAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CustomAlertController.m"; sourceTree = "<group>"; };
 		E465A5361A2103D900D7060A /* ezFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E465A53A1A2103D900D7060A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E465A53B1A2103D900D7060A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 			children = (
 				E4F3336F1A41552B00B15203 /* UIView+CustomVisualization.h */,
 				E4F333701A41552B00B15203 /* UIView+CustomVisualization.m */,
+				E41AA5481A4387E300318F7D /* UIAlertController+CustomAlertController.h */,
+				E41AA5491A4387E300318F7D /* UIAlertController+CustomAlertController.m */,
 			);
 			name = CustomVisualization;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				E4A8EFEF1A21E0AD0060FF4B /* WifiSelectTabViewCtrl.m in Sources */,
 				E4F333741A416E8B00B15203 /* LoginInputCellCtrl.m in Sources */,
 				E4A8F0771A229AF70060FF4B /* WifiSelectTabCellCtrl.m in Sources */,
+				E41AA54A1A4387E300318F7D /* UIAlertController+CustomAlertController.m in Sources */,
 				E465A53F1A2103D900D7060A /* AppDelegate.m in Sources */,
 				E4F333681A4147B500B15203 /* LoginTabViewCtrl.m in Sources */,
 				E4F333711A41552B00B15203 /* UIView+CustomVisualization.m in Sources */,

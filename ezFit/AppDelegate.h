@@ -19,7 +19,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
+- (void)switchRootViewToStoryboard:(NSString*)storyboard WithIdentifier:(NSString*)identifier;
 
 @end
 

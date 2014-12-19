@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileCreateViewCtrl : UIViewController
+@interface ProfileCreateViewCtrl : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
 @property (weak, nonatomic) IBOutlet UITextField *txtNickname;
@@ -21,4 +21,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRegister;
 @property (weak, nonatomic) IBOutlet UIButton *btnCancel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *actProfileUpdate;
+
+- (IBAction)buttonRegisterClick:(id)sender;
+- (IBAction)buttonCancelClick:(id)sender;
 @end

@@ -5,13 +5,14 @@
 //  Created by Stanley on 12/17/14.
 //  Copyright (c) 2014 Stanley. All rights reserved.
 //
-
+#import "AppDelegate.h"
 #import "ezFitService.h"
 
 #import "LoginTabViewCtrl.h"
 #import "LoginInputCellCtrl.h"
 
 #import "UIView+CustomVisualization.h"
+#import "UIAlertController+CustomAlertController.h"
 
 @interface LoginTabViewCtrl ()
 
@@ -125,13 +126,34 @@
     [self.actLoginConfirm startAnimating];
     
     ezFitService* service = [ezFitService sharedService];
-    [service loginWithUserId:txtUserId.text Password:txtPasswd.text Success:^(NSDictionary* result){
+    [service loginWithUserAccount:txtUserId.text Password:txtPasswd.text Success:^(NSDictionary* result){
         NSLog(@"%@",result);
+        
+        NSDictionary* loginInfo = [result objectForKey:@"userinfo"];
+        NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+        [settings setObject:loginInfo forKey:@"loginInfo"];
+        [settings synchronize];
+        
+        NSDictionary* scaleInfo =[settings objectForKey:@"scaleInfo"];
+        if (scaleInfo == nil) {
+            UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+//            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Scale Connection" message:@"There is no scales connection with this account ! Do you want connect your scale ?" delegate:self cancelButtonTitle:@"Skip" otherButtonTitles:@"Start Connect", nil];
+//            [alertView setTag:0];
+//            [alertView show];
+        } else {
+            AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
+        }
+        [self.actLoginConfirm stopAnimating];
     } Fail:^(NSError* error){
         NSLog(@"%@",error);
+        UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Login Error" Message:error.domain];
+        [self presentViewController:alert animated:YES completion:nil];
+        [self.actLoginConfirm stopAnimating];
     }];
     
-    [self.actLoginConfirm stopAnimating];
 }
 
 - (void)buttonRegisterClick:(UIButton*)sender {
@@ -148,6 +170,31 @@
 - (void)buttonConfirmClick:(UIButton*)sender {
     [self.actLoginConfirm startAnimating];
     
+    if ([txtPasswd.text isEqualToString:txtRePasswd.text] == NO) {
+        UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Password Error" Message:@"Password validation fail ! Please type exactly the same for both !"];
+        [self presentViewController:alert animated:YES completion:nil];
+        [self.actLoginConfirm stopAnimating];
+    } else {
+        ezFitService* service = [ezFitService sharedService];
+        [service registerWithUserAccount:txtUserId.text Password:txtPasswd.text Success:^(NSDictionary* result){
+            NSLog(@"%@",result);
+            
+            NSDictionary* loginInfo = [result objectForKey:@"userinfo"];
+            NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+            [settings setObject:loginInfo forKey:@"loginInfo"];
+            [settings synchronize];
+            
+            UIViewController* nextViewCtrl = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"ProfileCreateView"];
+            [self.navigationController pushViewController:nextViewCtrl animated:YES];
+            
+            [self.actLoginConfirm stopAnimating];
+        } Fail:^(NSError* error){
+            NSLog(@"%@",error);
+            UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Register Error" Message:error.domain];
+            [self presentViewController:alert animated:YES completion:nil];
+            [self.actLoginConfirm stopAnimating];
+        }];
+    }
 }
 
 - (void)buttonCancelClick:(UIButton*)sender {

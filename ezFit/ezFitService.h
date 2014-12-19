@@ -26,10 +26,12 @@ typedef void (^failBlockType)(NSError* error);
 
 - (void)setWifiPasswordWithWifiInfo:(NSDictionary*)wifiInfo AndPassword:(NSString*)password Success:(successBlockType)success Fail:(failBlockType)fail;
 
-- (void)loginWithUserId:(NSString*)userid Password:(NSString*)password Success:(successBlockType) successBlock Fail:(failBlockType)failBlock;
+- (void)loginWithUserAccount:(NSString*)useract Password:(NSString*)password Success:(successBlockType) successBlock Fail:(failBlockType)failBlock;
 
-- (void)registerWithUserInfo:(NSDictionary*)userInfo Success:(successBlockType)successBlock Fail:(failBlockType)failBlock;
+- (void)registerWithUserAccount:(NSString*)useract Password:(NSString*)password Success:(successBlockType)successBlock Fail:(failBlockType)failBlock;
 
-- (void)getUserRecordsWithUserId:(NSString*)userid LoginToken:(NSString*)token Date:(NSString*)date Success:(successBlockType)successBlock Fail:(failBlockType) failBlock;
+- (void)updateProfileWithUserAccount:(NSString*)useract LoginToken:(NSString*)token ProfileInfo:(NSDictionary*)profile Success:(successBlockType)successBlock Fail:(failBlockType)failBlock;
+
+- (void)getUserRecordsWithUserAccount:(NSString*)useract LoginToken:(NSString*)token Date:(NSString*)date Success:(successBlockType)successBlock Fail:(failBlockType) failBlock;
 
 @end

@@ -42,6 +42,7 @@
             break;
         case 1: //Go Settings Button
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            [[NSUserDefaults standardUserDefaults] setObject:@"Y" forKey:@"ScaleConnectRunning"];
 #if DEBUG
             TestConnect = @"Test";
 #endif

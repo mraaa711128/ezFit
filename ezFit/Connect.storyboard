@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jvm-du-oXi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jvm-du-oXi">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -10,7 +10,8 @@
         <!--Navigation Controller-->
         <scene sceneID="Ls5-dn-tXD">
             <objects>
-                <navigationController id="jvm-du-oXi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ScaleConnectView" navigationBarHidden="YES" id="jvm-du-oXi" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="590-Bn-QSY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXj-I2-MiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="441"/>
+            <point key="canvasLocation" x="100" y="415"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JI2-Uz-kJc">
@@ -165,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQG-Rb-PZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797" y="441"/>
+            <point key="canvasLocation" x="777" y="415"/>
         </scene>
         <!--Wifi Connect View Ctrl-->
         <scene sceneID="3Pk-GW-tXK">
@@ -211,7 +212,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-nv-TVb">
                                         <rect key="frame" x="8" y="61" width="584" height="331"/>
                                         <color key="backgroundColor" red="0.43488574029999999" green="0.76224833729999997" blue="0.99892520900000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda</string>
+                                        <mutableString key="text">1. Please open the box and take out your ezFit scale ! 2. Turn over to the back side of your scale, you will find a small button which will make the scale become connectable through WiFi. 3. Push the button down for a while. 4. Now click the Continue button on the bottom of the screen and follow the next instructions.</mutableString>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -899,6 +900,7 @@
                             <constraint firstItem="W2X-ED-ywC" firstAttribute="top" secondItem="lY7-oE-F6f" secondAttribute="topMargin" id="tNS-l4-xIJ"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L99-Vj-SNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -228,25 +228,32 @@ static AFHTTPSessionManager* manager;
     }
 }
 
-- (void)loginWithUserId:(NSString *)userid Password:(NSString *)password Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
-    NSDictionary* loginInfo = [NSDictionary dictionaryWithObjects:@[userid,password] forKeys:@[@"user_id",@"password"]];
-    [self requestServiceWithController:@"Users" AndFunction:@"AppLogin" AndParameters:loginInfo Success:successBlock Fail:failBlock];
+- (void)loginWithUserAccount:(NSString *)useract Password:(NSString *)password Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+    NSDictionary* loginInfo = [self createLoginInfoWithUserAccount:useract LoginToken:nil Password:password];
+    [self requestServiceWithController:@"Users" Function:@"AppLogin" Parameters:loginInfo Success:successBlock Fail:failBlock];
 }
 
-- (void)registerWithUserInfo:(NSDictionary *)userInfo Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+- (void)registerWithUserAccount:(NSString *)useract Password:(NSString*)password Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+    NSDictionary* regInfo = [self createLoginInfoWithUserAccount:useract LoginToken:nil Password:password];
+    [self requestServiceWithController:@"Users" Function:@"AppRegister" Parameters:regInfo Success:successBlock Fail:failBlock];
+}
+
+- (void)updateProfileWithUserAccount:(NSString *)useract LoginToken:(NSString *)token ProfileInfo:(NSDictionary *)profile Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+    NSDictionary* loginInfo = [self createLoginInfoWithUserAccount:useract LoginToken:token Password:nil];
+    NSDictionary* paras = [NSDictionary dictionaryWithObjects:@[loginInfo,profile] forKeys:@[@"login",@"profile"]];
+    [self requestServiceWithController:@"Profiles" Function:@"AppUpdate" Parameters:paras Success:successBlock Fail:failBlock];
+}
+
+- (void)getUserRecordsWithUserAccount:(NSString *)userid LoginToken:(NSString *)token Date:(NSString *)date Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
     
 }
 
-- (void)getUserRecordsWithUserId:(NSString *)userid LoginToken:(NSString *)token Date:(NSString *)date Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
-    
-}
-
-- (void)requestServiceWithController:(NSString*)controller AndFunction:(NSString*)function AndParameters:(NSDictionary*)parameters Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+- (void)requestServiceWithController:(NSString*)controller Function:(NSString*)function Parameters:(NSDictionary*)parameters Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
     AFHTTPSessionManager* mgr = [ezFitService getHttpSessionManager];
     [mgr POST:[NSString stringWithFormat:@"%@/%@",controller,function] parameters:parameters success:^(NSURLSessionDataTask* task, id responseObject){
         NSDictionary* response = responseObject;
         NSDictionary* result;
-        if ([result.allKeys containsObject:@"error"]) {
+        if ([response.allKeys containsObject:@"error"]) {
             result = [response objectForKey:@"error"];
             if (failBlock) {
                 failBlock([NSError errorWithDomain:[result objectForKey:@"message"] code:(NSInteger)[result objectForKey:@"code"] userInfo:nil]);
@@ -262,6 +269,14 @@ static AFHTTPSessionManager* manager;
             failBlock(error);
         }
     }];
+}
+
+-(NSDictionary*)createLoginInfoWithUserAccount:(NSString*)useract LoginToken:(NSString*)token Password:(NSString*)password {
+    if (token == nil) {
+        return [NSDictionary dictionaryWithObjects:@[useract,password] forKeys:@[@"email",@"password"]];
+    } else {
+        return [NSDictionary dictionaryWithObjects:@[useract,token] forKeys:@[@"email",@"auto_login_token"]];
+    }
 }
 
 - (NSString *)stringFromHexString:(NSString *)hexString {
