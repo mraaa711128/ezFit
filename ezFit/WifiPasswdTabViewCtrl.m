@@ -5,9 +5,12 @@
 //  Created by Stanley on 11/23/14.
 //  Copyright (c) 2014 Stanley. All rights reserved.
 //
+#import "AppDelegate.h"
 #import "ezFitService.h"
 
 #import "WifiPasswdTabViewCtrl.h"
+
+#import "UIAlertController+CustomAlertController.h"
 
 @interface WifiPasswdTabViewCtrl ()
 
@@ -205,6 +208,9 @@
 }
 
 - (IBAction)btnConfirmClick:(id)sender {
+    AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    [currentEditing resignFirstResponder];
     [wifiInfoObj setObject:txtSSID.text forKey:@"ssid"];
     [wifiInfoObj setObject:txtSecurityType.text forKey:@"security"];
     [wifiInfoObj setObject:txtEncrypt.text forKey:@"encrypt"];
@@ -213,8 +219,13 @@
     ezFitService* service = [ezFitService sharedService];
     [service setWifiPasswordWithWifiInfo:wifiInfoObj AndPassword:txtPassword.text Success:^(NSDictionary* result){
         setupSuccess = YES;
+        [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
     } Fail:^(NSError* error){
         setupSuccess = NO;
+        UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Setup Error" Message:@"Wifi Ap password setup fail !"];
+        [self presentViewController:alert animated:YES completion:nil];
+        UIAlertController* alertScale = [UIAlertController getScaleConnectAlertController];
+        [self presentViewController:alertScale animated:YES completion:nil];
     }];
 }
 

@@ -123,6 +123,8 @@
 #pragma mark - Button Click Action
 
 - (void)buttonLoginClick:(UIButton*)sender {
+    [currentEdit resignFirstResponder];
+    [self setUpControlEnableByRequestMode:YES];
     [self.actLoginConfirm startAnimating];
     
     ezFitService* service = [ezFitService sharedService];
@@ -147,11 +149,13 @@
             [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
         }
         [self.actLoginConfirm stopAnimating];
+        [self setUpControlEnableByRequestMode:NO];
     } Fail:^(NSError* error){
         NSLog(@"%@",error);
         UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Login Error" Message:error.domain];
         [self presentViewController:alert animated:YES completion:nil];
         [self.actLoginConfirm stopAnimating];
+        [self setUpControlEnableByRequestMode:NO];
     }];
     
 }
@@ -168,6 +172,8 @@
 }
 
 - (void)buttonConfirmClick:(UIButton*)sender {
+    [currentEdit resignFirstResponder];
+    [self setUpControlEnableByRequestMode:YES];
     [self.actLoginConfirm startAnimating];
     
     if ([txtPasswd.text isEqualToString:txtRePasswd.text] == NO) {
@@ -188,11 +194,13 @@
             [self.navigationController pushViewController:nextViewCtrl animated:YES];
             
             [self.actLoginConfirm stopAnimating];
+            [self setUpControlEnableByRequestMode:NO];
         } Fail:^(NSError* error){
             NSLog(@"%@",error);
             UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Register Error" Message:error.domain];
             [self presentViewController:alert animated:YES completion:nil];
             [self.actLoginConfirm stopAnimating];
+            [self setUpControlEnableByRequestMode:NO];
         }];
     }
 }
@@ -206,6 +214,14 @@
         [self setUpButtonTitleByRegMode:isRegMode];
     }];
     [self setUpButtonClickEventByRegMode:isRegMode];
+}
+
+- (void)setUpControlEnableByRequestMode:(BOOL)reqMode {
+    [txtUserId setEnabled:!reqMode];
+    [txtPasswd setEnabled:!reqMode];
+    [txtRePasswd setEnabled:!reqMode];
+    [self.btnLoginConfirm setEnabled:!reqMode];
+    [self.btnRegisterCancel setEnabled:!reqMode];
 }
 
 - (void)setUpInputViewSizeByRegMode:(BOOL)regMode {

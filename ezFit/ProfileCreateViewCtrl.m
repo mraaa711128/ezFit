@@ -236,6 +236,8 @@
 */
 
 - (IBAction)buttonRegisterClick:(id)sender {
+    [currentEdit resignFirstResponder];
+    [self setUpControlEnableByRequestMode:YES];
     [self.actProfileUpdate startAnimating];
     
     NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
@@ -261,16 +263,30 @@
             [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
         }
         [self.actProfileUpdate stopAnimating];
+        [self setUpControlEnableByRequestMode:NO];
     } Fail:^(NSError* error){
         NSLog(@"%@",error);
         UIAlertController* alert = [UIAlertController getOnlyAlertControllerWithTitle:@"Update Error" Message:error.domain];
         [self presentViewController:alert animated:YES completion:nil];
         [self.actProfileUpdate stopAnimating];
+        [self setUpControlEnableByRequestMode:NO];
     }];
 }
 
 - (IBAction)buttonCancelClick:(id)sender {
     [self.actProfileUpdate stopAnimating];
+    [self setUpControlEnableByRequestMode:NO];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)setUpControlEnableByRequestMode:(BOOL)reqMode {
+    [self.txtNickname setEnabled:!reqMode];
+    [self.txtSex setEnabled:!reqMode];
+    [self.txtBirthdate setEnabled:!reqMode];
+    [self.txtHeight setEnabled:!reqMode];
+    [self.txtWaist setEnabled:!reqMode];
+    [self.txtLastname setEnabled:!reqMode];
+    [self.txtFirstname setEnabled:!reqMode];
+}
+
 @end

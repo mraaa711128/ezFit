@@ -16,6 +16,8 @@
     static NSString* const scaleWifiSSID = @"WICED Config";
 #endif
 
+static BOOL isJumpToSettings;
+
 @interface WifiConnectViewCtrl ()
 
 @end
@@ -28,11 +30,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationController.navigationBar setHidden:YES];
+    
+    isJumpToSettings = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ScaleConnectRunning"] != nil) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ScaleConnectRunning"];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
