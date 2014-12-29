@@ -248,6 +248,12 @@ static AFHTTPSessionManager* manager;
     
 }
 
+- (void)getLatestRecordWithUserAccount:(NSString *)useract LoginToken:(NSString *)token Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
+    NSDictionary* loginInfo = [self createLoginInfoWithUserAccount:useract LoginToken:token Password:nil];
+    NSDictionary* paras = [NSDictionary dictionaryWithObjects:@[loginInfo] forKeys:@[@"login"]];
+    [self requestServiceWithController:@"WeightRawdatas" Function:@"Query" Parameters:paras Success:successBlock Fail:failBlock];
+}
+
 - (void)requestServiceWithController:(NSString*)controller Function:(NSString*)function Parameters:(NSDictionary*)parameters Success:(successBlockType)successBlock Fail:(failBlockType)failBlock {
     AFHTTPSessionManager* mgr = [ezFitService getHttpSessionManager];
     [mgr POST:[NSString stringWithFormat:@"%@/%@",controller,function] parameters:parameters success:^(NSURLSessionDataTask* task, id responseObject){

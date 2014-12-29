@@ -34,4 +34,6 @@ typedef void (^failBlockType)(NSError* error);
 
 - (void)getUserRecordsWithUserAccount:(NSString*)useract LoginToken:(NSString*)token Date:(NSString*)date Success:(successBlockType)successBlock Fail:(failBlockType) failBlock;
 
+- (void)getLatestRecordWithUserAccount:(NSString*)useract LoginToken:(NSString*)token Success:(successBlockType) successBlock Fail:(failBlockType) failBlock;
+
 @end

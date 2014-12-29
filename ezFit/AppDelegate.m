@@ -59,7 +59,12 @@
                 [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
             }
         } else {
-            [self switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
+            NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];
+            if (profileInfo == nil) {
+                [self switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
+            } else {
+                [self switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
+            }
         }
     }
 }

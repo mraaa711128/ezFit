@@ -10,6 +10,7 @@
 
 #import "ProfileCreateViewCtrl.h"
 
+#import "UIView+CustomVisualization.h"
 #import "UIAlertController+CustomAlertController.h"
 
 @interface ProfileCreateViewCtrl ()
@@ -26,6 +27,8 @@
     [super viewDidLoad];
     
     keyboardIsShown = NO;
+    
+    [self.imgProfile setCornerRadius:5.f];
     // Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:YES];
     

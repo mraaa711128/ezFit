@@ -20,6 +20,7 @@
 
 @implementation LoginTabViewCtrl {
     BOOL isRegMode;
+    CGFloat keyboardOffsetHeight;
     UITextField* currentEdit;
     UITextField* txtUserId;
     UITextField* txtPasswd;
@@ -39,7 +40,7 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [self.viewUserInput setCornerRadius:5.f];
-    
+
     [self.actLoginConfirm stopAnimating];
 }
 
@@ -71,13 +72,41 @@
 
 - (void)keyboardWillShow:(NSNotification*)kbNotification {
     CGSize kbSize = [[[kbNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    
-    CGRect viewFrame = self.view.frame;
-    viewFrame.size.height -= kbSize.height;
-    [self.view setFrame:viewFrame];
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view layoutIfNeeded];
-    }];
+
+    if (keyboardOffsetHeight <= 0) {
+        CGRect viewFrame = self.view.frame;
+        viewFrame.size.height -= kbSize.height;
+        [self.view setFrame:viewFrame];
+        [UIView animateWithDuration:0.3f animations:^{
+            [self.view layoutIfNeeded];
+        }];
+        keyboardOffsetHeight = kbSize.height;
+    } else {
+        if (keyboardOffsetHeight > kbSize.height) {
+            CGRect viewFrame = self.view.frame;
+            viewFrame.size.height += (keyboardOffsetHeight - kbSize.height);
+            [self.view setFrame:viewFrame];
+            [UIView animateWithDuration:0.3f animations:^{
+                [self.view layoutIfNeeded];
+            }];
+            keyboardOffsetHeight = kbSize.height;
+        } else {
+            CGRect viewFrame = self.view.frame;
+            viewFrame.size.height -= (kbSize.height - keyboardOffsetHeight);
+            [self.view setFrame:viewFrame];
+            [UIView animateWithDuration:0.3f animations:^{
+                [self.view layoutIfNeeded];
+            }];
+            keyboardOffsetHeight = kbSize.height;
+        }
+    }
+
+//    CGRect viewFrame = self.view.frame;
+//    viewFrame.size.height -= kbSize.height;
+//    [self.view setFrame:viewFrame];
+//    [UIView animateWithDuration:0.3f animations:^{
+//        [self.view layoutIfNeeded];
+//    }];
 }
 
 - (void)keyboardWillHide:(NSNotification*)kbNotification {
@@ -89,7 +118,7 @@
     [UIView animateWithDuration:0.3f animations:^{
         [self.view layoutIfNeeded];
     }];
-    
+    keyboardOffsetHeight = 0.0;    
 }
 
 #pragma mark - Text Field Delegate 
@@ -137,6 +166,7 @@
         [settings synchronize];
         
         NSDictionary* scaleInfo =[settings objectForKey:@"scaleInfo"];
+        NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];
         if (scaleInfo == nil) {
             UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
             [self presentViewController:alert animated:YES completion:nil];
@@ -145,8 +175,13 @@
 //            [alertView setTag:0];
 //            [alertView show];
         } else {
-            AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-            [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
+            if (profileInfo == nil) {
+                AppDelegate* app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+                [app switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
+            } else {
+                AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
+            }
         }
         [self.actLoginConfirm stopAnimating];
         [self setUpControlEnableByRequestMode:NO];
