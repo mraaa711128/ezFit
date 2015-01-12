@@ -20,9 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSLog(@"Did Finish Launch");
-    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
-    [settings setObject:nil forKey:@"loginInfo"];
-    [settings synchronize];
+//    NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
+//    [settings setObject:nil forKey:@"loginInfo"];
+//    [settings synchronize];
     return YES;
 }
 
@@ -52,18 +52,16 @@
     if (loginInfo == nil) {
         [self switchRootViewToStoryboard:@"Login" WithIdentifier:@"LoginView"];
     } else {
-        NSDictionary* scaleInfo = [settings objectForKey:@"scaleInfo"];
-        if (scaleInfo == nil) {
-            if ([settings objectForKey:@"ScaleConnectRunning"] == nil) {
-                UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
-                [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
-            } else {
-                [self switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
-            }
+        NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];
+        if (profileInfo == nil) {
+            [self switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
         } else {
-            NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];
-            if (profileInfo == nil) {
-                [self switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
+            NSDictionary* scaleInfo = [settings objectForKey:@"scaleInfo"];
+            if (scaleInfo == nil) {
+                if ([settings objectForKey:@"ScaleConnectRunning"] == nil) {
+                    UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
+                    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+                }
             } else {
                 [self switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
             }

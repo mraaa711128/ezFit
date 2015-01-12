@@ -15,6 +15,10 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Scale Connection" message:@"There is no scales connection with this account ! Do you want connect your scale ?" preferredStyle:UIAlertControllerStyleAlert];
     AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
     UIAlertAction* skipAction = [UIAlertAction actionWithTitle:@"Skip" style:UIAlertActionStyleCancel handler:^(UIAlertAction* action){
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ScaleConnectRunning"] != nil) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ScaleConnectRunning"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
         [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
     }];
     UIAlertAction* connectAction = [UIAlertAction actionWithTitle:@"Start Connect" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){

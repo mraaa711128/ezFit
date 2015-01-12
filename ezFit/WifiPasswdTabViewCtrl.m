@@ -219,6 +219,12 @@
     ezFitService* service = [ezFitService sharedService];
     [service setWifiPasswordWithWifiInfo:wifiInfoObj AndPassword:txtPassword.text Success:^(NSDictionary* result){
         setupSuccess = YES;
+
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ScaleConnectRunning"] != nil) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ScaleConnectRunning"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }    
+        
         [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
     } Fail:^(NSError* error){
         setupSuccess = NO;

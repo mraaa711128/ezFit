@@ -212,7 +212,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-nv-TVb">
                                         <rect key="frame" x="8" y="61" width="584" height="331"/>
                                         <color key="backgroundColor" red="0.43488574029999999" green="0.76224833729999997" blue="0.99892520900000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <mutableString key="text">1. Please open the box and take out your ezFit scale ! 2. Turn over to the back side of your scale, you will find a small button which will make the scale become connectable through WiFi. 3. Push the button down for a while. 4. Now click the Continue button on the bottom of the screen and follow the next instructions.</mutableString>
+                                        <string key="text">1. Please open the box and take out your ezFit scale ! 2. Turn over to the back side of your scale, you will find a small button which will make the scale become connectable through WiFi. 3. Push the button down for a while. 4. Now click the Continue button on the bottom of the screen and follow the next instructions.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -42,6 +42,7 @@ static BOOL isJumpToSettings;
 - (void)viewDidAppear:(BOOL)animated {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ScaleConnectRunning"] != nil) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ScaleConnectRunning"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
@@ -53,6 +54,7 @@ static BOOL isJumpToSettings;
         case 1: //Go Settings Button
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
             [[NSUserDefaults standardUserDefaults] setObject:@"Y" forKey:@"ScaleConnectRunning"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
 #if DEBUG
             TestConnect = @"Test";
 #endif
