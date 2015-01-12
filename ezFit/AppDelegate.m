@@ -57,6 +57,8 @@
             if ([settings objectForKey:@"ScaleConnectRunning"] == nil) {
                 UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
                 [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+            } else {
+                [self switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
             }
         } else {
             NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];

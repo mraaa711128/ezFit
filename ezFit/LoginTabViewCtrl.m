@@ -161,27 +161,26 @@
         NSLog(@"%@",result);
         
         NSDictionary* loginInfo = [result objectForKey:@"userinfo"];
+        NSDictionary* profileInfo = [result objectForKey:@"userprofile"];
         NSUserDefaults* settings = [NSUserDefaults standardUserDefaults];
         [settings setObject:loginInfo forKey:@"loginInfo"];
         [settings synchronize];
         
+        if (profileInfo == nil) {
+            AppDelegate* app =(AppDelegate*)[UIApplication sharedApplication].delegate;
+            [app switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
+        } else {
+            [settings setObject:profileInfo forKey:@"profileInfo"];
+            [settings synchronize];
+        }
+        
         NSDictionary* scaleInfo =[settings objectForKey:@"scaleInfo"];
-        NSDictionary* profileInfo = [settings objectForKey:@"profileInfo"];
         if (scaleInfo == nil) {
             UIAlertController* alert = [UIAlertController getScaleConnectAlertController];
             [self presentViewController:alert animated:YES completion:nil];
-            
-//            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Scale Connection" message:@"There is no scales connection with this account ! Do you want connect your scale ?" delegate:self cancelButtonTitle:@"Skip" otherButtonTitles:@"Start Connect", nil];
-//            [alertView setTag:0];
-//            [alertView show];
         } else {
-            if (profileInfo == nil) {
-                AppDelegate* app =(AppDelegate*)[UIApplication sharedApplication].delegate;
-                [app switchRootViewToStoryboard:@"Login" WithIdentifier:@"ProfileCreateView"];
-            } else {
-                AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
-                [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
-            }
+            AppDelegate* app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            [app switchRootViewToStoryboard:@"Main" WithIdentifier:@"MainView"];
         }
         [self.actLoginConfirm stopAnimating];
         [self setUpControlEnableByRequestMode:NO];
@@ -301,6 +300,17 @@
     }
 }
 
+- (void)setUpAccountInfo {
+    NSDictionary* loginInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginInfo"];
+    if (loginInfo != nil) {
+        [txtUserId setText:[loginInfo objectForKey:@"email"]];
+        //[txtPasswd setText:[loginInfo objectForKey:@"password"]];
+    } else {
+        [txtUserId setText:@""];
+        //[txtPasswd setText:@""];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -332,6 +342,14 @@
             break;
     }
     
+    NSDictionary* loginInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginInfo"];
+    if (loginInfo != nil) {
+        [txtUserId setText:[loginInfo objectForKey:@"email"]];
+        //[txtPasswd setText:[loginInfo objectForKey:@"password"]];
+    } else {
+        [txtUserId setText:@""];
+        //[txtPasswd setText:@""];
+    }
     // Configure the cell...
     
     return cell;

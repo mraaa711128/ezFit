@@ -11,7 +11,7 @@
 @implementation ProfileHeadCtrl
 
 - (void)awakeFromNib {
-    [self.imgProfile setImage:nil];
+    [self.imgProfile setImage:[UIImage imageNamed:@"ProfileTabIcon"]];
     [self.lblNickName setText:@""];
     [self.lblLastName setText:@""];
     [self.lblFirstName setText:@""];
